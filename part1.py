@@ -105,10 +105,10 @@ def main():
 	# w_final = wbar.toarray();
 	np.save("model_GD.npy", w);
 	count = 0;
-	for i in range (0,numTrain):
+	for i in range (numTrain,n):
 		y_h = np.matmul(Xtr[i],w.T);
 		if y_h*Ytr[i] > 0:
 			count += 1;
-	print (count/numTrain);
+	print (count/(n-numTrain));
 if __name__ == '__main__':
     main()
